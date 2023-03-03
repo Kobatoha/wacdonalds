@@ -1,0 +1,97 @@
+{% load static %}
+<html >
+<head>
+	<title>Мой блог</title>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" media="all" />
+
+	<link rel="shortcut icon" href="css/images/favicon.ico" />
+
+</head>
+<body>
+<div class="shell">
+	<div class="border">
+
+		<div id="navigation">
+			<ul>
+			    <li><a href="/" class="active">Главная</a></li>
+				<li><a href="/respawn">Респавн Боссов</a></li>
+				<li><a href="/member">Киски и сосиски</a></li>
+				<li><a href="/admin">Админ панель</a></li>
+			</ul>
+		</div>
+
+		<div id="main">
+			<div id="content" class="left">
+
+				<div class="projects">
+					<h3>{{ post.title }}</h3>
+                    <p align="center">
+                        <img src="{{ post.image.url }}" width="50%" />
+                    </p>
+					<br>
+					<div class="item">
+						<div class="text left">
+							<h4></h4>
+							<p>{{ post.description }}</p>
+							<br>
+							<p>Дата: {{ post.date }}</p>
+						</div>
+						<div class="cl"></div>
+					</div>
+				</div>
+			</div>
+			<div class="likes">
+				<br>
+				<p>Понравилось: {{ post.likes_set.all.count }} </p>
+				<br>
+				<a href="{% url 'add_likes' post.id %}">Нравится</a>
+				<a href="{% url 'del_likes' post.id %}">Не нравится</a>
+				<br>
+			</div>
+
+			<div class="form-comment">
+				<br>
+				<p>Можно оставить комментарий</p>
+				<br>
+				<div>
+					<form class="form" action="{% url 'add_comments' post.id %}" method="post">
+						{% csrf_token %}
+						<div class="form_grup">
+							<label class="form_label">Можешь что-нибудь написать</label>
+							<input class="form_input" name="text_comments"></input>
+						</div>
+						<div class="form_grup">
+							<label class="form_label">и не забудь назваться</label>
+							<input class="form_input" type="text" name="name">
+						</div>
+						<div>
+							<button class="form_button">Отправить</button>
+						</div>
+
+					</form>
+				</div>
+			</div>
+			<div>
+				{% for comment in post.comments_set.all %}
+					<div class="view-comment">
+						<h4>{{ comment.name }}</h4>
+						<p>
+							{{ comment.text_comments }}
+						</p>
+					</div>
+				{% endfor %}
+			</div>
+
+			<div class="cl">&nbsp;</div>
+		</div>
+
+
+	</div>
+
+	<div id="footer">
+		<p class="copy right">Copyright &copy;  2023 </p>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,136 @@
+* { margin: 0; padding: 0; outline:0; }
+
+body {
+    font-size: 16px;
+    line-height: 20px;
+    font-family: Courier, Georgia, Arial, Helvetica, Sans-Serif;
+    color: #fff;
+    background: #2c2c2c;
+}
+
+a { color: #c4a610; text-decoration: none; cursor:pointer; }
+a:hover { text-decoration: none; }
+
+a img { border: 0; }
+
+input, textarea, select { font-family: Arial, Helvetica, sans-serif; font-size:16px; }
+textarea { overflow:auto; }
+
+.cl { display: block; height: 0; font-size: 0; line-height: 0; text-indent: -4000px; clear: both; }
+.notext { font-size: 0; line-height: 0; text-indent: -4000px; }
+
+.left, .alignleft { float: left; display: inline; }
+.right, .alignright { float: right; display: inline; }
+
+
+.shell { width: 980px; margin: 0 auto; }
+.border { border: 1px solid #757575; background: #2c2c2c; position: relative; }
+
+
+#navigation { height: 43px; border-top: 1px solid #757575; border-bottom: 1px solid #757575; }
+#navigation ul { list-style: none; }
+#navigation ul li { float: left; height: 43px; border-right: 1px solid #757575; font-family: Courier; font-size: 18px; line-height: 43px; font-weight: bold; text-transform: uppercase; }
+#navigation ul li a { float: left; height: 43px; color: #fff; padding: 0 33px; }
+#navigation ul li a.active { color: #c4a610; text-decoration: none; }
+#navigation ul li a:hover { color: #c4a610; text-decoration: none; }
+
+
+
+#main { width: 932px; padding: 37px 24px 17px 24px; }
+#main h3 { font-size: 12px; line-height: 15px; color: #fff; text-transform: uppercase; border-bottom: 0px solid #757575; padding: 0 0 9px 0; }
+#main a.more:hover { text-decoration: none; }
+#main p.title { font-size: 18px; font-weight: bold; }
+
+#content { width: 905px; }
+
+.form-comment p {font-family: Courier; font-size: 22px; font-weight: bold; color: #c4a610}
+
+.form {
+	 width: 30%;
+	 float: right;
+         padding: 16px;
+         border-radius: 6px;
+         box-shadow: 0 1px 5px #757575;
+         font-family: sans-serif;
+         letter-spacing: 1px;
+}
+.form_button {
+         padding: 10px 40px;
+	 float: center;
+         border: none;
+         border-radius: 5px;
+         font-family: sans-serif;
+         letter-spacing: 1px;
+         font-size: 16px;
+         color :#2c2c2c ;
+         background-color: #c4a610;
+         outline: none;
+         cursor: pointer;
+         transition: 0.3s;
+ }
+.form_grup {
+	 position: relative;
+         margin-bottom: 22px;
+}
+.form_input {
+         width: 100%;
+         padding: 0 0 10px 0;
+         border: none;
+         border-bottom: 1px solid #c4a610;
+         background-color: transparent;
+         outline: none;
+	 color: #fff;
+         transition: 0.3s;
+ }
+.form_label {
+         position: absolute;
+         top: -18px;
+         z-index: 0;
+         color: #757575;
+         transition: 0.3s;
+ }
+
+.highlight {  }
+.highlight h3 { margin: 0 0 9px 0; }
+.highlight p { padding: 0 0 11px 0; }
+.highlight img { margin: 4px 12px 0 12px; }
+
+.projects { padding: 10px 0 0 0; }
+.projects h3 { margin: 0 0 17px 0; }
+.projects .item { 
+	margin: 0 0 28px 0; 
+	padding: 16px;
+	border-radius: 5px;
+        box-shadow: 0 1px 5px #757575;
+        font-family: Courier;
+        letter-spacing: 1px;
+}
+.projects .item .member { font-family: Courier; font-size: 22px; font-weight: bold; color: #c4a610 } 
+.projects .image { width: 183px; height: 141px; border: 0px solid #757575; padding: 2px; margin: 0 20px 0 3px; }
+.projects .text { width: 600px; }
+.projects .text h4 { font-size: 12px; line-height: 15px; color: #333; text-transform: uppercase; padding: 3px 0 2px 0; }
+.projects .text p { padding: 0 0 1px 0; }
+
+.btn-buy:hover { text-decoration: none; }
+
+.advertisement { padding: 0 0 13px 0; }
+.advertisement h3 { margin: 0 0 18px 0; }
+.advertisement .ads { padding: 0 15px 0 7px; }
+.advertisement .ad { margin: 0 0 18px 0; }
+
+.view-comment {         
+	 width: 60%;
+         padding: 16px;
+         border-radius: 5px;
+         box-shadow: 0 1px 5px #757575;
+         font-family: Courier;
+	 font-size: 18px;
+	 font-weight: bold;
+         letter-spacing: 1px;
+	 margin: 0 0 9px 0;
+}
+.view-comment h4 {margin: 0 0 11px 0; color: #c4a610; text-transform: capitalize}
+.view-comment p {margin: 0 0 0px 0; color: #757575; text-transform: lower}
+#footer { font-family: Arial, sans-serif; font-size: 11px; line-height: 14px; color: #7f7f7f; padding: 18px 27px 20px 38px; }
+#footer a{ color: #7f7f7f; }
+

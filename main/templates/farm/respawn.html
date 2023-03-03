@@ -1,0 +1,54 @@
+{% load static %}
+<html >
+<head>
+	<title>Респ РБ</title>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" media="all" />
+
+
+</head>
+<body>
+<div class="shell">
+	<div class="border">
+		<div id="navigation">
+			<ul>
+			    <li><a href="/">Главная</a></li>
+				<li><a href="/respawn" class="active">Респавн Боссов</a></li>
+				<li><a href="/member">Киски и сосиски</a></li>
+				<li><a href="/admin">Секретная комнатка</a></li>
+			</ul>
+		</div>
+
+		<div id="main">
+			<div id="content" class="left">
+				<div class="projects">
+					<h2>Записи</h2>
+					<br>
+					{% for respawn_time in respawn_list %}
+					<div class="item">
+						<div class="image left">
+							<a href="#"><img src="{{ respawn_time.raid_boss.image.url }}" width="140px" /></a>
+						</div>
+						<div class="text left">
+							<p class="title"><a href="#">{{ respawn_time.raid_boss.name }}</a></p>
+							<p>Босс Появится в {{ respawn_time.time }}</p>
+						</div>
+						<div class="cl"></div>
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+
+
+			<div class="cl">&nbsp;</div>
+		</div>
+
+
+	</div>
+
+	<div id="footer">
+		<p class="copy right">Copyright &copy;  2022 </p>
+	</div>
+</div>
+</body>
+</html>

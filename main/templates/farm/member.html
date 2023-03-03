@@ -1,0 +1,51 @@
+{% load static %}
+<html >
+<head>
+	<title>Респ РБ</title>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" media="all" />
+
+
+</head>
+<body>
+<div class="shell">
+	<div class="border">
+		<div id="navigation">
+			<ul>
+			    <li><a href="/">Главная</a></li>
+				<li><a href="/respawn">Респавн Боссов</a></li>
+				<li><a href="/member" class="active">Киски и сосиски</a></li>
+				<li><a href="/admin">Секретная комнатка</a></li>
+			</ul>
+		</div>
+
+		<div id="main">
+			<div id="content" class="left">
+				<div class="projects">
+					<h2>Записи</h2>
+					<br>
+					{% for member in clan_member_list %}
+					<div class="item">
+						<div>
+							<p class="member">{{ member.name }}</p>
+							<p>Ходил на боссиков {{ member.score }} раз</p>
+						</div>
+						<div class="cl"></div>
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+
+
+			<div class="cl">&nbsp;</div>
+		</div>
+
+
+	</div>
+
+	<div id="footer">
+		<p class="copy right">Copyright &copy;  2022 </p>
+	</div>
+</div>
+</body>
+</html>
