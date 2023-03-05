@@ -24,6 +24,7 @@
 				<div class="projects">
 					<h2>Записи</h2>
 					<br>
+
 					{% for respawn_time in respawn_list %}
 					<div class="item">
 						<div class="image left">
@@ -31,7 +32,7 @@
 						</div>
 						<div class="text left">
 							<p class="title"><a href="#">{{ respawn_time.raid_boss.name }}</a></p>
-							<p>Босс Появится в {{ respawn_time.time }}</p>
+							<p>Босс Появится {{ respawn_time.date }} в {{ respawn_time.time }}</p>
 						</div>
 						<div class="cl"></div>
 					</div>

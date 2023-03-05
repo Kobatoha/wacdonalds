@@ -69,6 +69,7 @@ class RespawnTime(models.Model):
     ''' Время возрождения РейдБосса '''
     raid_boss = models.ForeignKey('RaidBoss', on_delete=models.CASCADE, verbose_name='Имя РейдБосса')
     time = models.TimeField('Время возрождения', null=True)
+    date = models.DateField('Дата возрождения', null=True, default=datetime.today())
 
     class Meta:
         ''' корректное отображение записей в единственном и множественном числе '''
@@ -84,7 +85,6 @@ class FarmRaidBoss(models.Model):
     date = models.DateField('Дата убийства', default=datetime.now)
     time = models.TimeField('Время убийства', default=datetime.now)
     party_members = models.ManyToManyField('ClanMember', blank=True)
-    drop = models.ManyToManyField('DropRaidBoss', blank=True, verbose_name='Дроп')
 
     def __str__(self):
         return f'{self.name} - {self.date}'
@@ -107,7 +107,8 @@ def calculate_respawn_time_on_farm_raid_boss_creation(sender, instance, **kwargs
     m = int(raid_boss_cd.minute)
     respawn_time = datetime.combine(datetime.today(), last_farm_raid_boss_time) + timedelta(hours=h, minutes=m)
 
-    RespawnTime.objects.update_or_create(raid_boss=raid_boss, defaults={'time': respawn_time})
+    RespawnTime.objects.update_or_create(raid_boss=raid_boss, defaults={'time': respawn_time,
+                                                                        'date': respawn_time})
 
 @receiver(post_save, sender=FarmRaidBoss)
 def update_clan_members_score(sender, instance, **kwargs):
