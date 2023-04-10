@@ -86,12 +86,16 @@ class FarmRaidBoss(models.Model):
     time = models.TimeField('Время убийства', default=datetime.now)
     party_members = models.ManyToManyField('ClanMember', blank=True)
 
+
+
+
     def __str__(self):
         return f'{self.name} - {self.date}'
 
     class Meta:
         ''' корректное отображение записей в единственном и множественном числе '''
         verbose_name_plural = '5. Фарм РейдБоссов'
+
 
 
 @receiver(post_save, sender=FarmRaidBoss)
@@ -109,14 +113,6 @@ def calculate_respawn_time_on_farm_raid_boss_creation(sender, instance, **kwargs
 
     RespawnTime.objects.update_or_create(raid_boss=raid_boss, defaults={'time': respawn_time,
                                                                         'date': respawn_time})
-
-@receiver(post_save, sender=FarmRaidBoss)
-def update_clan_members_score(sender, instance, **kwargs):
-    ''' Подсчет очков присутствия за каждое убийство Босса '''
-    raid_boss = instance.name
-    for member in instance.party_members.all():
-        member.score += raid_boss.score
-        member.save()
 
 
 class DropRaidBoss(models.Model):

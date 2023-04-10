@@ -56,13 +56,14 @@ textarea { overflow:auto; }
 }
 .form_button {
          padding: 10px 40px;
-	 float: center;
+	     float: center;
          border: none;
          border-radius: 5px;
          font-family: sans-serif;
+         font-weight: bold;
          letter-spacing: 1px;
          font-size: 16px;
-         color :#2c2c2c ;
+         color :#2c2c2c;
          background-color: #c4a610;
          outline: none;
          cursor: pointer;
@@ -120,13 +121,13 @@ textarea { overflow:auto; }
 
 .view-comment {         
 	 width: 60%;
-         padding: 16px;
-         border-radius: 5px;
-         box-shadow: 0 1px 5px #757575;
-         font-family: Courier;
+     padding: 16px;
+     border-radius: 5px;
+     box-shadow: 0 1px 5px #757575;
+     font-family: Courier;
 	 font-size: 18px;
 	 font-weight: bold;
-         letter-spacing: 1px;
+     letter-spacing: 1px;
 	 margin: 0 0 9px 0;
 }
 .view-comment h4 {margin: 0 0 11px 0; color: #c4a610; text-transform: capitalize}
@@ -134,3 +135,48 @@ textarea { overflow:auto; }
 #footer { font-family: Arial, sans-serif; font-size: 11px; line-height: 14px; color: #7f7f7f; padding: 18px 27px 20px 38px; }
 #footer a{ color: #7f7f7f; }
 
+.farm_form {
+        margin-left: 32%;
+        width: 300px;
+        margin-top: 50px;
+        border-radius: 5px;
+        box-shadow: 0 1px 5px #757575;
+        overflow: hidden;
+        text-align: center;
+}
+.farm_form option:checked{
+        background-color: #c4a610;
+}
+.farm_form option:focus{
+        background-color: #c4a610;
+}
+
+.farm_button {
+         padding: 10px 40px;
+         border: none;
+         border-radius: 5px;
+         font-family: sans-serif;
+         font-weight: bold;
+         letter-spacing: 1px;
+         font-size: 16px;
+         color :#2c2c2c;
+         background-color: #c4a610;
+         outline: none;
+         cursor: pointer;
+         transition: 0.3s;
+ }
+.farm_button_block {
+    	 text-align: center;
+ }
+ .form-member {
+        margin-left: 32%;
+        width: 300px;
+        margin-top: 50px;
+        border-radius: 5px;
+        box-shadow: 0 1px 5px #757575;
+        overflow: hidden;
+        text-align: left;
+        }
+ .form-member-block {
+        margin: 15px;
+ }

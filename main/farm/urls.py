@@ -9,4 +9,5 @@ from . import views
 
 urlpatterns = [path('respawn/', views.RespawnTimeView.as_view()),
                path('respawn/', views.RaidBossView.as_view()),
-               path('member/', views.ClanMemberView.as_view())]
+               path('member/', views.ClanMemberView.as_view()),
+               path('create/', views.create_farm)]

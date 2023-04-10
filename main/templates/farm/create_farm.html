@@ -1,15 +1,17 @@
 {% load static %}
 <html >
 <head>
-	<title>Респ РБ</title>
+	<title>Мой блог</title>
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 	<link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" media="all" />
 
+	<link rel="shortcut icon" href="css/images/favicon.ico" />
 
 </head>
 <body>
 <div class="shell">
 	<div class="border">
+
 		<div id="navigation">
 			<ul>
 			    <li><a href="/">Главная</a></li>
@@ -21,25 +23,35 @@
 
 		<div id="main">
 			<div id="content" class="left">
+
 				<div class="projects">
-					<h2>Записи</h2>
-					<br>
-					<div><a href="/create"><button class="form_button" type="submit">Добавить запись</button></a></div>
-					<br>
-					{% for respawn_time in respawn_list %}
 					<div class="item">
-						<div class="image left">
-							<a href="#"><img src="{{ respawn_time.raid_boss.image.url }}" width="140px" /></a>
-						</div>
-						<div class="text left">
-							<p class="title"><a href="#">{{ respawn_time.raid_boss.name }}</a></p>
-							<p class="content">{{ respawn_time.raid_boss.name }} появится {{ respawn_time.date }} в {{ respawn_time.time }}</p>
-						</div>
+							<form method="post">
+								{% csrf_token %}
+								{{ form.name }}
+								{{ form.date }}
+								{{ form.time }}
+								<br>
+								<div class="form-member">
+									<div class="form-member-block">
+										{{ form.party_members }}
+									</div>
+								</div>
+								<br>
+								<span>{{ error }}</span>
+								<div class="farm_button_block">
+									<br>
+									<button class="farm_button" type="submit">Добавить запись</button>
+								</div>
+								<br>
+							</form>
 						<div class="cl"></div>
 					</div>
-					{% endfor %}
 				</div>
 			</div>
+
+
+
 
 
 			<div class="cl">&nbsp;</div>
@@ -49,7 +61,7 @@
 	</div>
 
 	<div id="footer">
-		<p class="copy right">Copyright &copy;  2022 </p>
+		<p class="copy right">Copyright &copy;  2023 </p>
 	</div>
 </div>
 </body>
