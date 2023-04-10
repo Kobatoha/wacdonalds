@@ -11,5 +11,7 @@
 (wacdonalds) PS C:\Users\Admin\Desktop\python\wacdonalds\main> python manage.py runserver
 
 Используемые библиотеки:
+
 Встроенные библиотеки (datetime)
+
 Django
